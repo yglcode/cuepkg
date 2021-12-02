@@ -14,7 +14,8 @@ package pet
 }
 
 //child classes
-#Cat: x=#Pet & {
+#Cat: #Pet & {
+   name: string
    talk: {
       arg?: string
       res: {
@@ -26,7 +27,7 @@ package pet
          }
       }
    }
-   do: res: "\(x.name) is purring"
+   do: res: "\(name) is purring"
 }
 
 #Dog: x=#Pet & {
