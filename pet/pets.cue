@@ -45,3 +45,20 @@ package pet
    do: res: "\(x.name) is pacing"
 }
 
+//duck typing: #Bird doesn't need be subclass of #Pet
+//unification will validate #Bird has all required properties at call/use site
+#Bird: {
+   name: string
+   talk: {
+      arg?: string
+      res: {
+         if arg!=_|_ {
+           "chirp, \(arg), chirp"
+         }
+         if arg==_|_ {
+           "chirp, chirp, who are you?"
+         }
+      }
+   }
+   do: res: "\(name) is flying"
+}
